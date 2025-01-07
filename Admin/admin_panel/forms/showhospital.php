@@ -15,6 +15,7 @@
 
     <!-- Fonts and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
       WebFont.load({
@@ -76,7 +77,7 @@ if(mysqli_num_rows($run) > 0){
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="index.php" class="logo">
+            <a href="./admin_panel/index.php" class="logo">
               <img
                 src="../assets/img/kaiadmin/logo_light.svg"
                 alt="navbar brand"
@@ -132,7 +133,7 @@ if(mysqli_num_rows($run) > 0){
              
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#forms">
-                  <i class="fas fa-pen-square"></i>
+                <i class="fa-regular fa-hospital"></i>
                   <p>Hospitals</p>
                   <span class="caret"></span>
                 </a>
@@ -154,20 +155,20 @@ if(mysqli_num_rows($run) > 0){
               
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <p>Maps</p>
+                <i class="fa-solid fa-children"></i>
+                  <p>Child Details</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="maps/googlemaps.php">
-                        <span class="sub-item">Google Maps</span>
+                      <a href="forms/show_child_det.php">
+                        <span class="sub-item">Child details</span>
                       </a>
                     </li>
                     <li>
                       <a href="maps/jsvectormap.php">
-                        <span class="sub-item">Jsvectormap</span>
+                        <span class="sub-item">child status</span>
                       </a>
                     </li>
                   </ul>

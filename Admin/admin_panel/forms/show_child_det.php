@@ -654,7 +654,7 @@ if(mysqli_num_rows($run) > 0){
                 <td><?php echo $data['vac_name']; ?></td>
                 <td><?php echo $data['hos_name']; ?></td>
                 <td><?php echo $data['pa_massege']; ?></td>
-                <td><a href="edit.php?id=<?php echo $data['id'];?>"><i class="fa-solid fa-pen-to-square text-success"></i></a></td>
+                <td><a href="child_edit.php?id=<?php echo $data['id'];?>"><i class="fa-solid fa-pen-to-square text-success"></i></a></td>
                 <td><a href="child_delete.php?id=<?php echo $data['id'];?>"><i class="fa-solid fa-trash text-danger"></i></a> </td>
                 </tr>
                 <?php }?>

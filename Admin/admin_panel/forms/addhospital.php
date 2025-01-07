@@ -14,6 +14,7 @@
     />
 
     <!-- Fonts and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
       WebFont.load({
@@ -52,10 +53,8 @@ if(isset($_POST["hos_sub"])){
     $ho_clotime=$_POST["hos_clot"];
     $himage_name=$_FILES["hos_img"]["name"];
     $himage_path=$_FILES["hos_img"]["tmp_name"];
-    // move_uploaded_file($himage_path,"../admin_panel/imgs/". $himage_name);
-    $upload_dir = "../admin_panel/imgs/";
-    $target_file = $upload_dir . basename($himage_name);
-    $upload_ok = 1;
+    move_uploaded_file($himage_path,"../admin_panel/asset/img". $himage_name);
+  
   $error="";
  
 

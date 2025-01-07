@@ -17,6 +17,9 @@ if(isset($_POST['ap_submit'])){
   $quer="INSERT INTO `child_detail`(`ch_name`, `pa_name`, `pa_email`, `ch_age`, `ch_address`, `vac_date`, `ch_dob`, `vac_name`, `hos_name`, `pa_massege`) VALUES ('$c_name','$p_name','$p_email','$c_age','$c_address','$vac_type','$c_dob','$vac_name','$hos_name','$a_message')";
 
   $run=mysqli_query($connection,$quer);
+  if($run){
+    header('location: ../index.php');
+  }
 }
 
 ?>

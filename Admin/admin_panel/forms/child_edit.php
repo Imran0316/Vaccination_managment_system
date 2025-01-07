@@ -43,9 +43,9 @@
     <link rel="stylesheet" href="../assets/css/demo.css" />
   </head>
   <?php 
-$hos_id=$_GET['id'];
+$child_id=$_GET['id'];
 $connection=mysqli_connect("localhost","root","","vaccine");
-$edit_quer="SELECT * FROM hospital_det WHERE id = '{$hos_id}'";
+$edit_quer="SELECT * FROM child_detail WHERE id = '{$child_id}'";
 $edit_run=mysqli_query($connection,$edit_quer);
 $edit_row=mysqli_fetch_assoc($edit_run);
   ?>
@@ -591,23 +591,23 @@ $edit_row=mysqli_fetch_assoc($edit_run);
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">update hospital details</a>
+                  <a href="#">update Child details</a>
                 </li>
                 <li class="separator">
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Hospiatls detail</a>
+                  <a href="#">Child detail</a>
                 </li>
               </ul>
             </div>
-            <form action="update.php" method="post" enctype="multipart/form-data">
+            <form action="child_update.php" method="post" enctype="multipart/form-data">
               <div class="card">
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <div class="card-title">Update Hospital details</div>
+                    <div class="card-title">Update Child details</div>
                     
                   </div>
                   <div class="card-body">
@@ -616,17 +616,17 @@ $edit_row=mysqli_fetch_assoc($edit_run);
                       <div class="col-lg-6 col-md-8">
                       <input type="hidden" class="form-control"  name="id" value="<?php echo $edit_row['id'];?>"> <br>
                        
-                        <label for="hos_name" class="form-label text-dark">Hospital Name:</label>
-                        <input type="text" class="form-control"  name="hos_name" value="<?php echo $edit_row['hosp_name'];?>"> <br>
+                        <label for="ch_name" class="form-label text-dark">Child Name:</label>
+                        <input type="text" class="form-control"  name="ch_name" value="<?php echo $edit_row['ch_name'];?>"> <br>
 
-                        <label for="hos_email" class="form-label text-dark">Hospital Email:</label>
-                        <input type="email" class="form-control"  value="<?php echo $edit_row['hosp_email'];?>" name="hos_email"> <br>
+                        <label for="a_pname" class="form-label text-dark">Parent Name:</label>
+                        <input type="text" class="form-control"  value="<?php echo $edit_row['pa_name'];?>" name="a_pname"> <br>
                         
-                        <label for="hos_address" class="form-label text-dark">Hospital Address:</label>
-                        <input type="text" class="form-control" value="<?php echo $edit_row['hosp_address'];?>" name="hos_address"> <br>
+                        <label for="pa_email" class="form-label text-dark">Parent Email:</label>
+                        <input type="email" class="form-control" value="<?php echo $edit_row['pa_email'];?>" name="pa_email"> <br>
 
-                        <label for="hos_cont" class="form-label text-dark">Hospital Contact:</label>
-                        <input type="tel" class="form-control" value="<?php echo $edit_row['hosp_contact'];?>" name="hos_cont"> <br>
+                        <label for="ch_age" class="form-label text-dark">Child Age:</label>
+                        <input type="number" class="form-control" value="<?php echo $edit_row['ch_age'];?>" name="ch_age"> <br>
 
                         
                         
@@ -634,17 +634,31 @@ $edit_row=mysqli_fetch_assoc($edit_run);
 
                       </div>
                       <div class="col-lg-6 col-md-8">
-                        <label for="hos_city" class="form-label text-dark" >City Name:</label><br> 
-                        <input type="text" class="form-control" name="hos_city"  value="<?php echo $edit_row['hosp_city'];?>"><br>
+                        <label for="ch_address" class="form-label text-dark" >Child Address:</label><br> 
+                        <input type="text" class="form-control" name="ch_address"  value="<?php echo $edit_row['ch_address'];?>"><br>
 
-                        <label for="hos_opt" class="form-label text-dark" >Opening Time:</label><br> 
-                        <input type="time" class="form-control" name="hos_opt" value="<?php echo $edit_row['hosp_opt'];?>"><br>
+                        <label for="vac_date" class="form-label text-dark" >Vaccination Date:</label><br> 
+                        <input type="date" class="form-control" name="vac_date" value="<?php echo $edit_row['vac_date'];?>"><br>
 
-                        <label for="hos_clot" class="form-label text-dark" >Closing Time:</label><br> 
-                        <input type="time" class="form-control" name="hos_clot" value="<?php echo $edit_row['hosp_clot'];?>"><br>
+                        <label for="ch_dob" class="form-label text-dark" >Date of birth:</label><br> 
+                        <input type="date" class="form-control" name="ch_dob" value="<?php echo $edit_row['ch_dob'];?>"><br>
 
-                        <label for="hos_img" class="form-label text-dark" >Hospital Image:</label><br> 
-                        <input type="file" class="form-control" value="<?php echo $edit_row['hosp_image'];?>" name="hos_img" ><br>
+                        <label for="vaccine_name" class="form-label" >Vaccine Name:</label> <br>
+              <select name="vac_name" id="department" class="form-select" required="" value="<?php echo $edit_row['vac_name'];?>">
+                <option value="">Select Vaccine</option>
+                <option value="corona">corona</option>
+                <option value="hepatitis">hepatitis</option>
+                <option value="polio">polio</option>
+              </select>
+              <label for="hospital_name" class="form-label" >Hospital Name:</label> <br>
+              <select name="hos_name" id="doctor" value="<?php echo $edit_row['hos_name'];?>" class="form-select" required="">
+                <option value="">Select Hospital</option>
+                <option value="Agha Khan Hospital">Agha Khan Hospital</option>
+                <option value="ziauddin Hospital">ziauddin Hospital</option>
+                <option value="saifee Hospital">saifee Hospital</option>
+              </select> <br>
+
+              <textarea class="form-control" name="a_message" rows="5" placeholder="Message (Optional)"></textarea>
 
                         
                       </div>
@@ -653,7 +667,7 @@ $edit_row=mysqli_fetch_assoc($edit_run);
                   </div>
                   <div class="card-action">
                     
-                    <input type="submit" value="update" name="hos_update" class="btn btn-primary">
+                    <input type="submit" value="update" name="child_update" class="btn btn-primary">
                     <button class="btn btn-danger">Cancel</button>
                   </div>
                 </div>

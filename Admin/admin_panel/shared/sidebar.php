@@ -59,7 +59,7 @@
              
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#forms">
-                  <i class="fas fa-pen-square"></i>
+                <i class="fa-regular fa-hospital"></i>
                   <p>Hospitals</p>
                   <span class="caret"></span>
                 </a>
@@ -81,7 +81,7 @@
               
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
-                  <i class="fas fa-map-marker-alt"></i>
+                <i class="fa-solid fa-children"></i>
                   <p>Child Details</p>
                   <span class="caret"></span>
                 </a>
