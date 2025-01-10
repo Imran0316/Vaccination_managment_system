@@ -53,7 +53,7 @@ if(isset($_POST["hos_sub"])){
     $ho_clotime=$_POST["hos_clot"];
     $himage_name=$_FILES["hos_img"]["name"];
     $himage_path=$_FILES["hos_img"]["tmp_name"];
-    move_uploaded_file($himage_path,"../admin_panel/asset/img". $himage_name);
+    move_uploaded_file($himage_path,"../imgs". $himage_name);
   
   $error="";
  

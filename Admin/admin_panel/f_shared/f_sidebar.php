@@ -1,11 +1,11 @@
-      <!-- Sidebar -->
-      <div class="sidebar" data-background-color="dark">
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
             <a href="index.php" class="logo">
               <img
-                src="assets/img/kaiadmin/logo_light.svg"
+                src="../assets/img/kaiadmin/logo_light.svg"
                 alt="navbar brand"
                 class="navbar-brand"
                 height="20"
@@ -66,12 +66,12 @@
                 <div class="collapse" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="forms/addhospital.php">
+                      <a href="addhospital.php">
                         <span class="sub-item">Add hospitals</span>
                       </a>
                     </li>
                     <li>
-                      <a href="forms/showhospital.php">
+                      <a href="showhospital.php">
                         <span class="sub-item">Show hospitals</span>
                       </a>
                     </li>
@@ -88,12 +88,12 @@
                 <div class="collapse" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="forms/show_child_det.php">
+                      <a href="show_child_det.php">
                         <span class="sub-item">Child details</span>
                       </a>
                     </li>
                     <li>
-                      <a href="forms/child_status.php">
+                      <a href="child_status.php">
                         <span class="sub-item">child status</span>
                       </a>
                     </li>
@@ -102,8 +102,8 @@
               </li>
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#charts">
-                <i class="fa-solid fa-user-doctor"></i>
-                  <p>Doctors</p>
+                  <i class="far fa-chart-bar"></i>
+                  <p>Charts</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="charts">

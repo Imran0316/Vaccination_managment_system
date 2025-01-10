@@ -347,7 +347,7 @@ if(isset($_GET["signup"])){
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
-                      <span class="fw-bold"><?php echo $data["name"]; ?></span>
+                      <span class="fw-bold">admin</span>
                     </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
