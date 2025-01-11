@@ -54,6 +54,7 @@
     </nav>
 
     <a class="cta-btn d-none d-sm-block" href="#appointment">Make an Appointment</a>
+    <a class="cta-btn d-none d-sm-block" href="forms/child_report.php">Child Report</a>
 
   </div>
 

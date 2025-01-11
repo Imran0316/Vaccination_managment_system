@@ -330,7 +330,7 @@ include('shared/nav.php');
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            <div class="text-center"><button type="submit" name="ap_submit">Make an Appointment</button></div>
+            <div class="text-center"><button type="submit" class="btn btn-primary" name="ap_submit">Make an Appointment</button></div>
           </div>
         </form>
 

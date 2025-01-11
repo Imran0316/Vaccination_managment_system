@@ -61,6 +61,7 @@ table th, td{
             <table border="1px"  >
               <thead >
                 <tr >
+                    <th>Child Id</th>
                     <th>Child Name</th>
                     <th>Parent Name</th>
                     <th>Parent Email</th>
@@ -73,15 +74,17 @@ table th, td{
                     while($data=mysqli_fetch_assoc($run)){
                 ?>
                 <tr >
+                  
+                <td><?php echo $data['id']; ?></td>
                 <td><?php echo $data['ch_name']; ?></td>
                 <td><?php echo $data['pa_name']; ?></td>
                 <td><?php echo $data['pa_email']; ?></td>
                 <td><?php echo $data['vac_name']; ?></td>
                 <td>
                 <form method='POST' action='update_status.php'>
-                <input type='hidden' name='id' value="' . $row['id'] . '">
-                <button type='submit' name='approve'>Approve</button>
-                <button type='submit' name='reject'>Reject</button>
+                <input type='hidden' name='id' value="<?php echo $data['id']; ?>">
+                <button type='submit' name='action' value="approve" class="btn btn-success">Approve</button>
+                <button type='submit' name='action' value="reject" class="btn btn-danger">Reject</button>
             </form>
             </td>
                 

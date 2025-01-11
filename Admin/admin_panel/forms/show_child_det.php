@@ -77,6 +77,7 @@ include("../f_shared/f_nav.php");
                     <th>Vaccine Name</th>
                     <th>Hospital Name</th>
                     <th>Message</th>
+                    <th>Child Status</th>
                     <th>Edit</th>
                     <th style="border-right-color: black !important;">Delete</th>
                 </tr>
@@ -96,6 +97,7 @@ include("../f_shared/f_nav.php");
                 <td><?php echo $data['vac_name']; ?></td>
                 <td><?php echo $data['hos_name']; ?></td>
                 <td><?php echo $data['pa_massege']; ?></td>
+                <td><?php echo $data['child_status']; ?></td>
                 <td><a href="child_edit.php?id=<?php echo $data['id'];?>"><i class="fa-solid fa-pen-to-square text-success"></i></a></td>
                 <td><a href="child_delete.php?id=<?php echo $data['id'];?>"><i class="fa-solid fa-trash text-danger"></i></a> </td>
                 </tr>
