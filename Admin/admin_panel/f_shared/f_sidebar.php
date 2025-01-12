@@ -102,8 +102,8 @@
               </li>
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#charts">
-                  <i class="far fa-chart-bar"></i>
-                  <p>Charts</p>
+                <i class="fa-solid fa-user-doctor"></i>
+                  <p>Doctors</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="charts">

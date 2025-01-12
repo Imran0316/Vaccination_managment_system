@@ -22,3 +22,7 @@ if(mysqli_num_rows($run)>0){
 <?php }?>
 </body>
 </html>
+
+<script>
+    
+</script>
