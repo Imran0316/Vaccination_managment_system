@@ -3,14 +3,15 @@ include("../f_shared/f_header.php");
 include("../f_shared/f_sidebar.php");
 ?>
   <style>
+    
      table th, td{
-      border:1px solid black;
+      border-bottom: 1px solid gray;
       text-align: center;
-      padding: 2px;
+      padding: 10px;
       
      }
      th, td{
-      /* padding: 10px; */
+      padding: 10px;
      }
      th{
       background-color: black;
@@ -63,8 +64,8 @@ include("../f_shared/f_nav.php");
                 </li>
               </ul>
             </div>
-              <div class="show_hosp d-flex justify-content-center ">
-            <table border="1px"  >
+              <div class="show_hosp d-flex justify-content-center scroll-container">
+            <table border="1px"   class="content-item">
               <thead >
                 <tr >
                     <th>Child Name</th>

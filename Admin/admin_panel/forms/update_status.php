@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['id']) && isset($_POST['action'])) {
+if(isset($_POST['id']) && isset($_POST['action'])) {
     $id = $_POST['id'];
     $action = $_POST['action'];
 
