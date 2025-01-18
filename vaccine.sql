@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2025 at 08:55 AM
+-- Generation Time: Jan 18, 2025 at 07:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `vaccine`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_vaccine`
+--
+
+CREATE TABLE `add_vaccine` (
+  `vac_id` int(11) NOT NULL,
+  `vaccine_name` varchar(255) NOT NULL,
+  `vac_stoke` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `add_vaccine`
+--
+
+INSERT INTO `add_vaccine` (`vac_id`, `vaccine_name`, `vac_stoke`) VALUES
+(1, 'chicken', 100);
 
 -- --------------------------------------------------------
 
@@ -108,6 +127,12 @@ INSERT INTO `signup_det` (`id`, `name`, `email`, `password`, `rpassword`, `role`
 --
 
 --
+-- Indexes for table `add_vaccine`
+--
+ALTER TABLE `add_vaccine`
+  ADD PRIMARY KEY (`vac_id`);
+
+--
 -- Indexes for table `child_detail`
 --
 ALTER TABLE `child_detail`
@@ -128,6 +153,12 @@ ALTER TABLE `signup_det`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `add_vaccine`
+--
+ALTER TABLE `add_vaccine`
+  MODIFY `vac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `child_detail`

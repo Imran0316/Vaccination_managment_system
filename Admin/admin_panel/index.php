@@ -119,7 +119,7 @@ include('shared/mainheader.php');
                 <div class="card card-round">
                   <div class="card-header">
                     <div class="card-head-row">
-                      <div class="card-title">User Statistics</div>
+                      <div class="card-title">Add Vaccines</div>
                       <div class="card-tools">
                         <a
                           href="#"
@@ -140,10 +140,30 @@ include('shared/mainheader.php');
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="chart-container" style="min-height: 375px">
-                      <canvas id="statisticsChart"></canvas>
-                    </div>
-                    <div id="myChartLegend"></div>
+                    
+                    <form action="forms/addvaccine.php" method="post">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Vaccine Name</label>
+                            <input type="text" class="form-control" name="vac_name" placeholder="Vaccine Name">
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="exampleFormControlInput2">Stoke</label>
+                            <input type="text" class="form-control" placeholder="Stoke" name="vac_stoke">
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                        <div class="form-group">
+                        <label for="exampleFormControlInput2">___</label>
+                          <input type="submit" class="form-control btn-success text-white border-light" value="Add" name="add_vac" >
+                        </div>  
+                        </div>
+                      </div>
+
+                    </form>
                   </div>
                 </div>
               </div>
