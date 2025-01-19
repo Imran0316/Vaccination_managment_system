@@ -306,19 +306,31 @@ include('shared/nav.php');
             <div class="col-md-4 form-group mt-3">
             <label for="vaccine_name" class="form-label" >Vaccine Name:</label> <br>
               <select name="vaccine_names" id="department" class="form-select" required="">
-                <option value="">Select Vaccine</option>
-                <option value="corona">corona</option>
-                <option value="hepatitis">hepatitis</option>
-                <option value="polio">polio</option>
+                <option value="select vaccine">SELECT VACCINE</option>
+                <?php
+                  $connection=mysqli_connect("localhost","root","","vaccine");
+                  $quer="SELECT * FROM add_vaccine ";
+                  $run=mysqli_query($connection,$quer);
+                  while($data = mysqli_fetch_assoc($run)){
+                ?>
+                <option name="vaccine_names" value="<?php $data["vac_id"] ?>"><?php echo $data["vaccine_name"] ?></option>
+    
+                 <?php }?>   
               </select>
             </div>
             <div class="col-md-4 form-group mt-3">
             <label for="hospital_name" class="form-label" >Hospital Name:</label> <br>
               <select name="hosp_name" id="doctor" class="form-select" required="">
                 <option value="">Select Hospital</option>
-                <option value="Agha Khan Hospital">Agha Khan Hospital</option>
-                <option value="ziauddin Hospital">ziauddin Hospital</option>
-                <option value="saifee Hospital">saifee Hospital</option>
+                <?php
+                  $connection=mysqli_connect("localhost","root","","vaccine");
+                  $quer="SELECT * FROM hospital_det ";
+                  $run=mysqli_query($connection,$quer);
+                  while($data = mysqli_fetch_assoc($run)){
+                ?>
+                <option value="<?php $data["id"] ?>"><?php echo $data["hosp_name"] ?></option>
+    
+                 <?php }?>   
               </select>
             </div>
           </div>
@@ -330,7 +342,7 @@ include('shared/nav.php');
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            <div class="text-center"><button type="submit" class="btn btn-primary" name="ap_submit">Make an Appointment</button></div>
+            <div class="text-center"><button type="submit" class="btn btn-primary" name="ap_submit"  >Make an Appointment</button></div>
           </div>
         </form>
 

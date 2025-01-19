@@ -15,7 +15,7 @@ if(isset($_POST['id']) && isset($_POST['action'])) {
     $result = mysqli_query($connection, $query);
 
     if ($result) {
-        header('location: show_child_det.php');
+        header('location: child_status.php');
     } else {
         echo "Error updating status.";
     }

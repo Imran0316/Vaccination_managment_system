@@ -2,8 +2,8 @@
 include("shared/header.php");
 
 $connection=mysqli_connect("localhost","root","","vaccine");
-$id=$_POST['submit'];
-$sql="SELECT * FROM child_detail WHERE id = 1";
+$id=$_POST["id"];
+$sql="SELECT * FROM child_detail WHERE id = $id";
 $run=mysqli_query($connection,$sql);
 if(mysqli_num_rows($run)>0){
 ?>

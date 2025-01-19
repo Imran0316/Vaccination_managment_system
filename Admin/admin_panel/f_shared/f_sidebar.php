@@ -103,14 +103,14 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#charts">
                 <i class="fa-solid fa-user-doctor"></i>
-                  <p>Doctors</p>
+                  <p>Vaccinated children</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="charts/charts.php">
-                        <span class="sub-item">Chart Js</span>
+                      <a href="r_children.php">
+                        <span class="sub-item">children</span>
                       </a>
                     </li>
                     <li>

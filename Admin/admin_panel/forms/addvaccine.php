@@ -7,6 +7,9 @@ $connection=mysqli_connect("localhost","root","","vaccine");
 
 $query="INSERT INTO `add_vaccine`(`vaccine_name`, `vac_stoke`) VALUES ('$vacname','$vacstoke')";    
 $run=mysqli_query($connection,$query);
+if($run){
+    header("location: ../index.php");
+}
 }
 
 ?>
