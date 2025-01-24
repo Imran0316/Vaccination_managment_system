@@ -114,8 +114,8 @@
                       </a>
                     </li>
                     <li>
-                      <a href="charts/sparkline.php">
-                        <span class="sub-item">Sparkline</span>
+                      <a href="vac_report.php">
+                        <span class="sub-item">Vaccine Records</span>
                       </a>
                     </li>
                   </ul>

@@ -3,7 +3,18 @@ include("../f_shared/f_header.php");
 include("../f_shared/f_sidebar.php");
 
 $connection=mysqli_connect("localhost","root","","vaccine");
-$quer="SELECT * FROM child_detail WHERE vac_report='vaccinated'";
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+
+
+if (!empty($search)) {
+    $quer = "SELECT * FROM child_detail WHERE 
+        ch_name LIKE '%$search%' OR 
+        pa_name LIKE '%$search%' OR 
+        vac_name LIKE '%$search%'";
+} else {
+    $quer="SELECT * FROM child_detail WHERE vac_report='vaccinated'";
+}
+
 $run=mysqli_query($connection,$quer);
 if(mysqli_num_rows($run)>0){
 
@@ -36,10 +47,10 @@ include("../f_shared/f_nav.php");
 
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Hospiatls</h3>
+              <h3 class="fw-bold mb-3"> Vaccine Status</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
-                  <a href="#">
+                  <a href="../index.php">
                     <i class="icon-home"></i>
                   </a>
                 </li>
@@ -47,15 +58,31 @@ include("../f_shared/f_nav.php");
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Add Hospitals</a>
+                  <a href="r_children2.php">Child Vaccine Status</a>
                 </li>
-                <li class="separator">
-                  <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Hospiatls detail form</a>
-                </li>
+                
               </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                  <form method="GET" class="d-flex mb-4">
+
+
+
+                              <input
+                              type="text"
+                              name="search"
+                              placeholder="Search ..."
+                              class="form-control"
+                              value="<?= htmlspecialchars($search) ?>"
+                              />
+                              <button type="submit" class="btn btn-search btn-primary m-1">
+                                  <i class="fa fa-search search-icon"></i>
+                              </button>
+                              <a href="show_child_det.php" class="btn btn-success m-1" ><i class="fa-solid fa-arrow-rotate-right"></i></a>
+                      </div>
+                  </form>
+                </div>
             </div>
               <div class="show_hosp d-flex justify-content-center scroll-container">
             <table border="1px"   class="content-item">

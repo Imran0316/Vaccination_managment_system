@@ -46,37 +46,50 @@ include('shared/nav.php');
 
     </div>
 
-    <div class="col-lg-8">
-      <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-        <div class="row gy-4">
-
-          <div class="col-md-6">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-          </div>
-
-          <div class="col-md-6 ">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-          </div>
-
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-          </div>
-
-          <div class="col-md-12">
-            <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-          </div>
-
-          <div class="col-md-12 text-center">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-            <button type="submit">Send Message</button>
-          </div>
-
+  <div class="col-lg-8 mx-auto mt-5">
+  <form action="forms/contactform.php" method="post" data-aos="fade-up" data-aos-delay="200" class="p-4 shadow rounded">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row gy-3">
+      
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name" required="">
+          <label for="floatingName">Your Name</label>
         </div>
-      </form>
-    </div><!-- End Contact Form -->
+      </div>
+      
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="Your Email" required="">
+          <label for="floatingEmail">Your Email</label>
+        </div>
+      </div>
+      
+      <div class="col-md-12">
+        <div class="form-floating">
+          <input type="text" name="subject" class="form-control" id="floatingSubject" placeholder="Subject" required="">
+          <label for="floatingSubject">Subject</label>
+        </div>
+      </div>
+      
+      <div class="col-md-12">
+        <div class="form-floating">
+          <textarea name="message" class="form-control" id="floatingMessage" placeholder="Message" rows="6" style="height: 150px;" required=""></textarea>
+          <label for="floatingMessage">Message</label>
+        </div>
+      </div>
+      
+      <div class="col-md-12 text-center">
+        <div class="loading text-muted d-none">Loading...</div>
+        <div class="error-message text-danger d-none"></div>
+        <div class="sent-message text-success d-none">Your message has been sent. Thank you!</div>
+        <button type="submit" name="contactsubmit" class="btn btn-primary mt-3 px-5">Send Message</button>
+      </div>
+      
+    </div>
+  </form>
+</div>
+
 
   </div>
 

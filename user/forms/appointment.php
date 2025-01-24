@@ -1,45 +1,29 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+if(isset($_POST['ap_submit'])){
+  $c_name=$_POST["a_cname"];
+  $p_name=$_POST["a_pname"];
+  $p_email=$_POST["a_pemail"];
+  $c_age=$_POST["a_cage"];
+  $c_address=$_POST["a_address"];
+  $vac_type=$_POST["vac_date"];
+  $c_dob=$_POST["dob"];
+  $vac_name=$_POST["vaccine_names"];
+  $hos_name=$_POST["hosp_name"];
+  $a_message=$_POST["a_message"];
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  $connection=mysqli_connect("localhost","root","","vaccine");
+
+  $quer="INSERT INTO `child_detail`(`ch_name`, `pa_name`, `pa_email`, `ch_age`, `ch_address`, `vac_date`, `ch_dob`, `vac_name`, `hos_name`, `pa_massege`) VALUES ('$c_name','$p_name','$p_email','$c_age','$c_address','$vac_type','$c_dob','$vac_name','$hos_name','$a_message')";
+
+  $run=mysqli_query($connection,$quer);
+  if($run){
+    header('location: ../index.php');
   }
+}
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = 'Online Appointment Form';
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
 
-  $contact->add_message( $_POST['name'], 'Name');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['phone'], 'Phone');
-  $contact->add_message( $_POST['date'], 'Appointment Date');
-  $contact->add_message( $_POST['department'], 'Department');
-  $contact->add_message( $_POST['doctor'], 'Doctor');
-  $contact->add_message( $_POST['message'], 'Message');
 
-  echo $contact->send();
 ?>
+

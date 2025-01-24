@@ -54,6 +54,8 @@
     </nav>
 
     <a class="cta-btn d-none d-sm-block" href="#appointment">Make an Appointment</a>
+    <a class="cta-btn d-none d-sm-block" href="loginform.php">login</a>
+    <a class="cta-btn d-none d-sm-block" href="logout.php">logout</a>
 
   </div>
 

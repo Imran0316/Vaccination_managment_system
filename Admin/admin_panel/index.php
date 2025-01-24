@@ -1,7 +1,7 @@
 <?php 
-// session_start();
-// if(!isset($_SESSION['email'])){
-//   header('location :login.php');
+session_start();
+// if(!isset($_SESSION['name'])){
+//   header("Location: index.php");
 // }
 include('shared/header.php');
 include('shared/sidebar.php');
@@ -42,7 +42,7 @@ include('shared/mainheader.php');
             >
               <div>
                 <h3 class="fw-bold mb-3">Dashboard</h3>
-                <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>
+                <h6 class="op-7 mb-2">Vaccine Management Admin Dashboard</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
                 <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
@@ -110,13 +110,23 @@ include('shared/mainheader.php');
                         <div
                           class="icon-big text-center icon-success bubble-shadow-small"
                         >
-                          <i class="fas fa-luggage-cart"></i>
+                        <i class="fa-solid fa-check"></i>
                         </div>
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Sales</p>
-                          <h4 class="card-title">$ 1,345</h4>
+                          <?php
+                          $connection=mysqli_connect("localhost","root","","vaccine");
+
+                          $quer2="SELECT COUNT(*) AS approved_children FROM child_detail WHERE child_status = 'approved'";
+                          $run=mysqli_query($connection,$quer2);
+                          if(mysqli_num_rows($run) > 0){
+                            $row=mysqli_fetch_assoc($run);
+                            $tchildren = $row["approved_children"];
+                          }
+                          ?>
+                          <p class="card-category">Approved Childs</p>
+                          <h4 class="card-title"> <?php echo $tchildren;  ?></h4>
                         </div>
                       </div>
                     </div>
@@ -131,13 +141,23 @@ include('shared/mainheader.php');
                         <div
                           class="icon-big text-center icon-secondary bubble-shadow-small"
                         >
-                          <i class="far fa-check-circle"></i>
+                        <i class="fa-solid fa-syringe"></i>
                         </div>
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Order</p>
-                          <h4 class="card-title">576</h4>
+                          <?php
+                          $connection=mysqli_connect("localhost","root","","vaccine");
+
+                          $quer3="SELECT COUNT(*) AS vaccinated_children FROM child_detail WHERE vac_report = 'vaccinated'";
+                          $run=mysqli_query($connection,$quer3);
+                          if(mysqli_num_rows($run) > 0){
+                            $row=mysqli_fetch_assoc($run);
+                            $tchildren = $row["vaccinated_children"];
+                          }
+                          ?>
+                          <p class="card-category">Vaccinated Childs</p>
+                          <h4 class="card-title"><?php echo $tchildren; ?></h4>
                         </div>
                       </div>
                     </div>
@@ -153,13 +173,13 @@ include('shared/mainheader.php');
                       <div class="card-title">Add Vaccines</div>
                       <div class="card-tools">
                         <a
-                          href="#"
+                          href="vac_edit.php"
                           class="btn btn-label-success btn-round btn-sm me-2"
                         >
                           <span class="btn-label">
                             <i class="fa fa-pencil"></i>
                           </span>
-                          Export
+                          Edit
                         </a>
                         <a href="#" class="btn btn-label-info btn-round btn-sm">
                           <span class="btn-label">

@@ -305,7 +305,7 @@ include('shared/nav.php');
             </div>
             <div class="col-md-4 form-group mt-3">
             <label for="vaccine_name" class="form-label" >Vaccine Name:</label> <br>
-              <select name="vaccine_names" id="department" class="form-select" required="">
+              <select  name="vaccine_names" id="department" class="form-select" required="">
                 <option value="select vaccine">SELECT VACCINE</option>
                 <?php
                   $connection=mysqli_connect("localhost","root","","vaccine");
@@ -315,7 +315,7 @@ include('shared/nav.php');
                 ?>
                 <option name="vaccine_names" value="<?php $data["vac_id"] ?>"><?php echo $data["vaccine_name"] ?></option>
     
-                 <?php }?>   
+                 <?php }?>  
               </select>
             </div>
             <div class="col-md-4 form-group mt-3">
@@ -339,16 +339,15 @@ include('shared/nav.php');
             <textarea class="form-control" name="a_message" rows="5" placeholder="Message (Optional)"></textarea>
           </div>
           <div class="mt-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          
             <div class="text-center"><button type="submit" class="btn btn-primary" name="ap_submit"  >Make an Appointment</button></div>
           </div>
         </form>
 
       </div>
 
-    </section><!-- /Appointment Section -->
+    </section>
+    <!-- /Appointment Section -->
 
     <!-- Departments Section -->
     <section id="departments" class="departments section">

@@ -45,10 +45,10 @@ include("../f_shared/f_nav.php");
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Hospiatls</h3>
+              <h3 class="fw-bold mb-3">Add Hospiatls</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
-                  <a href="#">
+                  <a href="../index.php">
                     <i class="icon-home"></i>
                   </a>
                 </li>
@@ -56,14 +56,9 @@ include("../f_shared/f_nav.php");
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Add Hospitals</a>
+                  <a href="addhospital.php">Hospital form</a>
                 </li>
-                <li class="separator">
-                  <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Hospiatls detail form</a>
-                </li>
+                
               </ul>
             </div>
             <form action="" method="post" enctype="multipart/form-data">

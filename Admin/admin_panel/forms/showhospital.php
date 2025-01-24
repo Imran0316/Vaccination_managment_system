@@ -2,27 +2,43 @@
 include("../f_shared/f_header.php");
 include("../f_shared/f_sidebar.php");
 ?>
-  <style>
-     table th, td{
-      border:1px solid black;
-      text-align: center;
-      padding: 2px;
-      
-     }
-     th, td{
-      padding: 10px;
-     }
-     th{
-      background-color: black;
-      color: white;
-      border-right-color: white !important;
-     }
-  </style>
+   <style>
+    
+    table th, td{
+     border-bottom: 1px solid gray;
+     text-align: center;
+     padding: 10px;
+     
+    }
+    th, td{
+     padding: 10px;
+    }
+    th{
+     background-color: black;
+     color: white;
+     border-right-color: white !important;
+    }
+
+
+ </style>
   <?php
 
 $connection=mysqli_connect("localhost","root","","vaccine");
 
-$quer="SELECT * FROM hospital_det";
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+
+
+if (!empty($search)) {
+    $quer = "SELECT * FROM hospital_det WHERE 
+        hosp_name LIKE '%$search%' OR 
+        hosp_email LIKE '%$search%' OR 
+        hosp_address LIKE '%$search%' OR 
+        hosp_contact LIKE '%$search%' OR 
+        hosp_city LIKE '%$search%'";
+} else {
+    $quer = "SELECT * FROM hospital_det";
+}
+
 $run=mysqli_query($connection,$quer);
 if(mysqli_num_rows($run) > 0){
 
@@ -37,11 +53,12 @@ include("../f_shared/f_nav.php");
 ?>
         <div class="container">
           <div class="page-inner">
+
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Hospiatls</h3>
+              <h3 class="fw-bold mb-3">Hospiatls Detail</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
-                  <a href="#">
+                  <a href="../index.php">
                     <i class="icon-home"></i>
                   </a>
                 </li>
@@ -49,18 +66,36 @@ include("../f_shared/f_nav.php");
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Add Hospitals</a>
+                  <a href="#">Hospitals</a>
                 </li>
-                <li class="separator">
-                  <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Hospiatls detail form</a>
-                </li>
+                
               </ul>
             </div>
-              <div class="show_hosp d-flex justify-content-center">
-            <table border="1px" >
+            <div class="row">
+              <div class="col-md-8">
+                  <form method="GET" class="d-flex mb-4">
+
+
+
+                              <input
+                              type="text"
+                              name="search"
+                              placeholder="Search ..."
+                              class="form-control"
+                              value="<?= htmlspecialchars($search) ?>"
+                              />
+                              <button type="submit" class="btn btn-search btn-primary m-1">
+                                  <i class="fa fa-search search-icon"></i>
+                              </button>
+                              <a href="showhospital.php" class="btn btn-success m-1" ><i class="fa-solid fa-arrow-rotate-right"></i></a>
+                      </div>
+                  </form>
+                </div>
+            </div>
+
+              <div class="show_hosp d-flex justify-content-center scroll-container">
+                
+            <table border="1px" class="content-item">
               <thead >
                 <tr >
                     <th>H_Name</th>
@@ -94,7 +129,11 @@ include("../f_shared/f_nav.php");
                 <?php }?>
               </tbody>
             </table>
-            <?php }?>
+            <?php } else { ?>
+              <tr>
+                  <td colspan="13">No records found</td>
+              </tr>
+             <?php } ?>
           </div>
         </div>
 
